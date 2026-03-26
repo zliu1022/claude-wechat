@@ -9,7 +9,7 @@
     {
       "name": "wechat",
       "description": "Receive and reply to WeChat messages in your Claude Code session",
-      "source": "."
+      "source": "./"
     }
   ]
 }
