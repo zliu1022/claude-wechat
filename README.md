@@ -28,7 +28,7 @@ curl -fsSL https://bun.sh/install | bash
 
 ```bash
 # 在 Claude Code 里运行
-/plugin marketplace add zliu/claude-channel
+/plugin marketplace add zliu1022/claude-wechat
 /plugin install wechat@zliu-claude-channel
 /reload-plugins
 ```
@@ -36,7 +36,7 @@ curl -fsSL https://bun.sh/install | bash
 或本地开发模式：
 
 ```bash
-git clone https://github.com/zliu/claude-channel.git
+git clone https://github.com/zliu1022/claude-wechat.git
 claude --plugin-dir ./claude-channel
 ```
 
