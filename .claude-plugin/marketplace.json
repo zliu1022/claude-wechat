@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-channel",
+  "description": "WeChat bridge plugin for Claude Code",
+  "owner": {
+    "name": "zliu"
+  },
+  "plugins": [
+    {
+      "name": "wechat",
+      "description": "Receive and reply to WeChat messages in your Claude Code session",
+      "source": "."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "wechat",
+  "description": "WeChat bridge for Claude Code — receive and reply to WeChat messages directly in your session",
+  "version": "1.0.0",
+  "author": {
+    "name": "zliu"
+  }
+}

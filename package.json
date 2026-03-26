@@ -1,0 +1,9 @@
+{
+  "name": "claude-channel",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/main.ts",
+    "login": "bun run src/main.ts login"
+  }
+}
