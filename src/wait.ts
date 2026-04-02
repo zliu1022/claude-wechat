@@ -28,7 +28,7 @@ function decryptAesEcb(data: Buffer, aesKeyB64: string): Buffer {
   const hexKey = Buffer.from(aesKeyB64, "base64").toString("ascii");
   const key = Buffer.from(hexKey, "hex");
   const decipher = crypto.createDecipheriv("aes-128-ecb", key, null);
-  decipher.setAutoPadding(true);
+  decipher.setAutoPadding(false);
   return Buffer.concat([decipher.update(data), decipher.final()]);
 }
 
@@ -44,7 +44,7 @@ async function downloadCdnMedia(media: CDNMedia, suffix = ".bin"): Promise<strin
 
     let data = Buffer.from(await res.arrayBuffer());
 
-    if (media.encrypt_type === 1 && media.aes_key) {
+    if (media.aes_key) {
       data = decryptAesEcb(data, media.aes_key);
     }
 
