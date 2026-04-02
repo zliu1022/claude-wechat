@@ -39,18 +39,25 @@ The background task will complete and you'll be notified. Read the output file �
 {"from": "user_id@im.wechat", "text": "message content", "context_token": "..."}
 ```
 
+For image messages, `image_paths` is also included:
+
+```json
+{"from": "user_id@im.wechat", "text": "[图片]", "context_token": "...", "image_paths": ["/Users/xxx/.claude-channel/images/img_1234.jpg"]}
+```
+
 ### Processing Steps
 
 1. **Read the message** from the output file
 2. **Check for commands**:
    - `/new` or `/reset` → reply "已开始新对话" (no processing needed)
    - `/help` → reply with help text
-3. **Check for URLs** in the text:
+3. **Check for images**: If `image_paths` is present, use the Read tool to view each image file path. You are a multimodal model and can analyze images directly.
+4. **Check for URLs** in the text:
    - If the message contains a URL, fetch the article content and analyze it
    - For WeChat article URLs (`mp.weixin.qq.com`), the content is usually in `<div id="js_content">`
-4. **Process the message** using your full capabilities (search, read files, write code, generate reports, etc.)
-5. **Reply** to WeChat using the reply command
-6. **Restart** the wait loop
+5. **Process the message** using your full capabilities (search, read files, write code, generate reports, etc.)
+6. **Reply** to WeChat using the reply command
+7. **Restart** the wait loop
 
 ## Replying to Messages
 

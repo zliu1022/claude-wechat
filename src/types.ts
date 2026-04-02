@@ -42,10 +42,19 @@ export interface FileItem {
   len?: string;
 }
 
+export interface ImageItem {
+  media?: CDNMedia;
+  // Some API responses may include a direct CDN URL
+  url?: string;
+  width?: number;
+  height?: number;
+}
+
 export interface MessageItem {
   type?: number;
   text_item?: TextItem;
   voice_item?: { text?: string };
+  image_item?: ImageItem;
   file_item?: FileItem;
   ref_msg?: { title?: string; message_item?: MessageItem };
 }
